@@ -21,5 +21,9 @@ Route::group(['middleware' => ['UserMiddleware']], function () {
       ->name('Home');
 });
 
+Route::get('/blank', function() {
+  return view('user.Blank');
+});
+
 
 // Route::get('/home', 'HomeController@index')->name('home');
