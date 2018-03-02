@@ -12,11 +12,14 @@
 */
 
 Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::get('/logout', 'Auth\LoginController@logout');
 
 Auth::routes();
 
-Route::get('/home', 'UserController@Home')
-     ->name('Home');
+Route::group(['middleware' => ['UserMiddleware']], function () {
+  Route::get('/home', 'UserController@Home')
+      ->name('Home');
+});
 
 
-Route::get('/home', 'HomeController@index')->name('home');
+// Route::get('/home', 'HomeController@index')->name('home');
