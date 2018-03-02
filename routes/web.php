@@ -11,6 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', 'Auth\LoginController@showLoginForm');
+Route::get('/logout', 'Auth\LoginController@logout');
+
+Auth::routes();
+
+Route::group(['middleware' => ['UserMiddleware']], function () {
+  Route::get('/home', 'UserController@Home')
+      ->name('Home');
 });
+
+Route::get('/blank', function() {
+  return view('user.Blank');
+});
+
+
+// Route::get('/home', 'HomeController@index')->name('home');
