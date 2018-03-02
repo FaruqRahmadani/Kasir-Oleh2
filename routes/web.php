@@ -12,7 +12,8 @@
 */
 
 Route::get('/', 'Auth\LoginController@showLoginForm');
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::get('/logout', 'Auth\LoginController@logout')
+     ->name('Logout');
 
 Auth::routes();
 
