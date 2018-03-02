@@ -1,14 +1,22 @@
 
 // Fonts
-@import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
+// @import url("https://fonts.googleapis.com/css?family=Raleway:300,400,600");
 
 // Variables
-@import "variables";
+// @import "variables";
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+// @import '~bootstrap/scss/bootstrap';
 
-.navbar-laravel {
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
-}
+// .navbar-laravel {
+//   background-color: #fff;
+//   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.04);
+// }
+
+@import '/assets/css/bootstrap.min';
+@import '/assets/css/animate.min';
+@import '/assets/css/paper-dashboard';
+@import '/assets/css/demo';
+@import url("http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css");
+@import url("https://fonts.googleapis.com/css?family=Muli:400,300");
+@import '/assets/css/themify-icons';
