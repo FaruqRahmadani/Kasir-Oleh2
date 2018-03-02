@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Paper Dashboard by Creative Tim</title>
 
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <div class="wrapper" id="app">
     <div class="sidebar" data-background-color="white" data-active-color="success"><div class="sidebar-wrapper">
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text">
@@ -90,7 +90,7 @@
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href=" {{ route('Logout') }} ">
+              <a href="#" onclick="logout()">
                 <i class="ti-close"></i>
                 <p>Logout</p>
               </a>
@@ -124,7 +124,7 @@
           </ul>
         </nav>
         <div class="copyright pull-right">
-          &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
+          &copy;, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
         </div>
       </div>
     </footer>
