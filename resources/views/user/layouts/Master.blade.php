@@ -29,10 +29,10 @@
             <p>Home</p>
           </a>
         </li>
-        <li>
-          <a href="user.html">
+        <li class="{{ RouteHelper::ActiveRoute('Data-Kategori') }}">
+          <a href=" {{ route('Data-Kategori') }} ">
             <i class="ti-user"></i>
-            <p>User Profile</p>
+            <p>Kategori</p>
           </a>
         </li>
         <li>
@@ -135,4 +135,13 @@
 
 </body>
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
+<script type="text/javascript">
+  @if (session('success'))
+    notif('success', 'Berhasil', '{{session('success')}}');
+  @endif
+</script>
 </html>

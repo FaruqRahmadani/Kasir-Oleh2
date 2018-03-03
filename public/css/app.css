@@ -1,4 +1,4 @@
-@import url(http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/css?family=Muli:400,300);/*!
+@import url(http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css);@import url(https://fonts.googleapis.com/css?family=Muli:400,300);@import url(https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap.min.css);@import url(https://cdn.datatables.net/responsive/2.2.1/css/responsive.bootstrap.min.css);/*!
  * Bootstrap v3.3.5 (http://getbootstrap.com)
  * Copyright 2011-2015 Twitter, Inc.
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
@@ -17434,5 +17434,13 @@ textarea.form-control {
 
 .ti-rss-alt:before {
   content: "\E75F";
+}
+
+[v-cloak] {
+  display: none;
+}
+
+.label-form {
+  top: 8px;
 }
 

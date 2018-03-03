@@ -5,6 +5,7 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
  import swal from 'sweetalert';
+ window.Vue = require('vue');
 
  require('./bootstrap');
  require('./assets/js/bootstrap-checkbox-radio');
@@ -22,5 +23,3 @@
  */
 
  // Vue.component('example-component', require('./components/ExampleComponent.vue'));
-
-window.Vue = require('vue');
