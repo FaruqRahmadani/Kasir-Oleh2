@@ -5,7 +5,7 @@
   <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/apple-icon.png">
   <link rel="icon" type="image/png" sizes="96x96" href="assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <title>Paper Dashboard by Creative Tim</title>
 
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-  <div class="wrapper">
+  <div class="wrapper" id="app">
     <div class="sidebar" data-background-color="white" data-active-color="success"><div class="sidebar-wrapper">
       <div class="logo">
         <a href="http://www.creative-tim.com" class="simple-text">
@@ -29,10 +29,10 @@
             <p>Home</p>
           </a>
         </li>
-        <li>
-          <a href="user.html">
+        <li class="{{ RouteHelper::ActiveRoute('Data-Kategori') }}">
+          <a href=" {{ route('Data-Kategori') }} ">
             <i class="ti-user"></i>
-            <p>User Profile</p>
+            <p>Kategori</p>
           </a>
         </li>
         <li>
@@ -85,35 +85,14 @@
             <span class="icon-bar bar2"></span>
             <span class="icon-bar bar3"></span>
           </button>
-          <a class="navbar-brand" href="#">Dashboard</a>
+          <p class="navbar-brand">{{ RouteHelper::JudulRoute(Request::route()->getName()) }}</p>
         </div>
         <div class="collapse navbar-collapse">
           <ul class="nav navbar-nav navbar-right">
             <li>
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="ti-panel"></i>
-                <p>Stats</p>
-              </a>
-            </li>
-            <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                <i class="ti-bell"></i>
-                <p class="notification">5</p>
-                <p>Notifications</p>
-                <b class="caret"></b>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Notification 1</a></li>
-                <li><a href="#">Notification 2</a></li>
-                <li><a href="#">Notification 3</a></li>
-                <li><a href="#">Notification 4</a></li>
-                <li><a href="#">Another notification</a></li>
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <i class="ti-settings"></i>
-                <p>Settings</p>
+              <a href="#" onclick="logout()">
+                <i class="ti-close"></i>
+                <p>Logout</p>
               </a>
             </li>
           </ul>
@@ -145,7 +124,7 @@
           </ul>
         </nav>
         <div class="copyright pull-right">
-          &copy; <script>document.write(new Date().getFullYear())</script>, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
+          &copy;, made with <i class="fa fa-heart heart"></i> by <a href="http://www.creative-tim.com">Creative Tim</a>
         </div>
       </div>
     </footer>
@@ -156,4 +135,13 @@
 
 </body>
 <script src="{{ asset('js/app.js') }}" type="text/javascript"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.1/js/dataTables.responsive.min.js"></script>
+<script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/responsive/2.2.1/js/responsive.bootstrap.min.js"></script>
+<script type="text/javascript">
+  @if (session('success'))
+    notif('success', 'Berhasil', '{{session('success')}}');
+  @endif
+</script>
 </html>

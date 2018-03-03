@@ -4,6 +4,8 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+ import swal from 'sweetalert';
+ window.Vue = require('vue');
 
  require('./bootstrap');
  require('./assets/js/bootstrap-checkbox-radio');
@@ -11,6 +13,7 @@
  require('./assets/js/bootstrap-notify');
  require('./assets/js/paper-dashboard');
  require('./assets/js/demo');
+ require('./assets/custom-frq');
 
 
 /**
@@ -19,10 +22,4 @@
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
 
-
-// window.Vue = require('vue');
-// Vue.component('example-component', require('./components/ExampleComponent.vue'));
-//
-// const app = new Vue({
-//     el: '#app'
-// });
+ // Vue.component('example-component', require('./components/ExampleComponent.vue'));

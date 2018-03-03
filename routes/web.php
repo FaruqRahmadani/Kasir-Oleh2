@@ -11,19 +11,32 @@
 |
 */
 
-Route::get('/', 'Auth\LoginController@showLoginForm');
-Route::get('/logout', 'Auth\LoginController@logout');
+Route::GET('/', 'Auth\LoginController@showLoginForm');
+Route::GET('/logout', 'Auth\LoginController@logout')
+     ->NAME('Logout');
 
 Auth::routes();
 
 Route::group(['middleware' => ['UserMiddleware']], function () {
   Route::get('/home', 'UserController@Home')
-      ->name('Home');
+      ->NAME('Home');
+  // Kategori
+  Route::GET('/kategori', 'UserController@DataKategori')
+      ->NAME('Data-Kategori');
+  Route::POST('/kategori', 'UserController@SubmitTambahDataKategori')
+      ->NAME('Post-Tambah-Data-Kategori');
+  Route::GET('/kategori/{id}/hapus', 'UserController@HapusDataKategori')
+      ->NAME('Delete-Data-Kategori');
+  Route::POST('/kategori/{id}/edit', 'UserController@SubmitEditDataKategori')
+      ->NAME('Post-Edit-Data-Kategori');
+  // Supplier
+  Route::GET('/supplier', 'UserController@DataSupplier')
+      ->NAME('Data-Supplier');
 });
 
-Route::get('/blank', function() {
+Route::GET('/blank', function() {
   return view('user.Blank');
 });
 
 
-// Route::get('/home', 'HomeController@index')->name('home');
+// Route::GET('/home', 'HomeController@index')->name('home');
